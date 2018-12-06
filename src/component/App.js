@@ -6,23 +6,24 @@ import NewForm from  './newsForm'
 
 class App extends Component {
   render() {
-  	const news = [
+
+  	const name = 'savas'
+		const news = [
+		{
+			id: '1',
+			title: 'react title 1',
+			description: 'react description 1'
+		},
 			{
-				id: 1,
-				title: "title 1",
-				description: "description 1"
+				id: '2',
+				title: 'react title 2',
+				description: 'react description 2'
 			},
 			{
-				id: 2,
-				title: "title 2",
-				description: "description 2"
-			},
-			{
-				id: 3,
-				title: "title 13",
-				description: "description 3"
-			}
-		]
+				id: '3',
+				title: 'react title 3',
+				description: 'react description 3'
+			}]
 
     return (
       <div className="App">
@@ -30,7 +31,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
 					<h1 className="App-title">Welcome</h1>
         </header>
-				<News/>
+				<News news={news} name="savas"/>
       </div>
     );
   }

@@ -21,17 +21,21 @@ export default News;
 */
 import React from 'react';
 import NewsItem from './newsItem'
+import PropTypes from 'prop-types';
 
 class News extends React.Component{
+	static propTypes = {
+		news: PropTypes.array.isRequired
+	}
+
 	render() {
-		const title = 'react title';
-		const description = 'react description'
+		const elements = this.props.news.map(news => <NewsItem key={news.id} title={news.title} description={news.description}/>)
 		let nameAdd = 'Savaş';
 		return(
 			<div>
 				{/*{ 2 + 2 === 4 ? 'evet' : 'hayır' }*/}
 				{/*{nameAdd}*/}
-				<NewsItem title={title} description={description} />
+				{ elements }
 			</div>
 		);
 	}
